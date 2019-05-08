@@ -31,7 +31,7 @@ $ ./reddit-wallpaper.sh -r r/Art -s top -n -b "000000"
 ```crontab
 $ sudo -u user -g group -H crontab -e
 
-# At minute 0 past every 4th hour.
+# At minute 0 past every 4th hour
 0   */4   *   *   *   export DISPLAY=:0; /path/to/reddit-wallpaper.sh > /dev/null 2>&1
 ```
 
