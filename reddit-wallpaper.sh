@@ -273,7 +273,7 @@ fi
 
 if [[ -z ${IS_NSFW_OK} ]] ;
 then
-    NFSW_OK=${DEFAULT_IS_NSFW_OK}
+    NSFW_OK=${DEFAULT_IS_NSFW_OK}
 fi
 
 if [[ -z ${BACKGROUND_COLOR} ]] ;
