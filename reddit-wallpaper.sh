@@ -86,7 +86,7 @@ readonly DEFAULT_IS_NSFW_OK="${E_FALSE}"
 readonly DEFAULT_BACKGROUND_COLOR="282828"
 readonly DEFAULT_FEH_ARGS="--no-fehbg --image-bg black --bg-max"
 
-readonly DEFAULT_FIREFOX_VERSION_STRING="Mozilla Firefox 62.0"
+readonly DEFAULT_FIREFOX_VERSION_STRING="Mozilla Firefox 66.0"
 
 readonly LOCAL_WALLPAPER_DIR="${HOME}/.cache/reddit_wallpapers/"
 readonly LOCAL_WALLPAPER_NAME="$(${DATE} +%Y-%m-%d-%H-%M-%S)"
