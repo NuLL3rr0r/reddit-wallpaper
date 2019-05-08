@@ -104,7 +104,9 @@ function usage() {
 
     ${ECHO_FMT} "${FMT_INFO}Correct usage:${FMT_OFF}"
     ${ECHO}
-    ${ECHO_FMT} "    ${FMT_INFO}${SCRIPT_NAME} [-r {r/subreddit}] [-s {sorty by}] [-n] [-b {background color}] [-f 'feh args']${FMT_OFF}"
+    ${ECHO_FMT} "    ${FMT_INFO}${SCRIPT_NAME} -h | [-r {r/subreddit}] [-s {sorty by}] [-n] [-b {background color}] [-f 'feh args']${FMT_OFF}"
+    ${ECHO}
+    ${ECHO_FMT} "    ${FMT_INFO}-h: shows this usage note"
     ${ECHO}
     ${ECHO_FMT} "    ${FMT_INFO}-r: subreddit name or names prefixed with r/ and combined by a + sign (e.g. r/Art or r/Art+ArtPorn; default: ${DEFAULT_SUBREDDIT})${FMT_OFF}"
     ${ECHO}
@@ -117,7 +119,12 @@ function usage() {
     ${ECHO_FMT} "    ${FMT_INFO}-f: feh arguments to pass; run 'man feh' for a list of available options (default: ${DEFAULT_FEH_ARGS})${FMT_OFF}"
     ${ECHO}
 
-    exit 1
+    if [[ -n "${message}" ]] ;
+    then
+        exit 1
+    else
+        exit 0
+    fi
 }
 
 function log()
@@ -211,9 +218,12 @@ then
     fatal "Could not find command tr!"
 fi
 
-while getopts ":r: :s: :n :b: :f:" ARG;
+while getopts ":h :r: :s: :n :b: :f:" ARG;
 do
     case ${ARG} in
+        h)
+            usage
+            ;;
         r)
             SUBREDDIT=${OPTARG}
             ;;
@@ -294,6 +304,8 @@ fi
 
 readonly FIREFOX_VERSION_NUMBER=$(${ECHO} "${FIREFOX_VERSION_STRING}" | ${PERL} -nle "m/[-+]?([0-9]*\.[0-9]+|[0-9]+)/; ${PRINT} \$1")
 readonly FIREFOX_USER_AGENET="Mozilla/5.0 (X11; Linux x86_64; rv:${FIREFOX_VERSION_NUMBER}) Gecko/20100101 Firefox/${FIREFOX_VERSION_NUMBER}"
+
+info "Run '${SCRIPT_NAME} -h' for more information on available options."
 
 info "Setting user agent to '${FIREFOX_USER_AGENET}'..."
 

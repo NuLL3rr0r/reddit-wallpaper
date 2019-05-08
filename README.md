@@ -7,7 +7,9 @@ A customizable script which automagically fetches a wallpaper from your favorite
 ```
 Correct usage:
 
-    reddit-wallpaper.sh [-r {r/subreddit}] [-s {sorty by}] [-n] [-b {background color}] [-f 'feh args']
+    reddit-wallpaper.sh -h | [-r {r/subreddit}] [-s {sorty by}] [-n] [-b {background color}] [-f 'feh args']
+
+    -h: shows this usage note
 
     -r: subreddit name or names prefixed with r/ and combined by a + sign (e.g. r/Art or r/Art+ArtPorn; default: r/Art+ArtPorn+Cinemagraphs+ExposurePorn+Graffiti+ImaginaryLandscapes+itookapicture+ImaginaryBehemoths+ImaginaryCharacters+ImaginaryLandscapes+ImaginaryLeviathans+ImaginaryMindscapes+ImaginaryMonsters+ImaginaryTechnology)
 
