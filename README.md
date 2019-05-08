@@ -41,6 +41,10 @@ Do not forget to:
 $ chmod a+x /path/to/reddit-wallpaper.sh
 ```
 
+## User Guide
+
+[Visit this blog post for more information](https://www.babaei.net/blog/my-reddit-wallpaper-downloader-script).
+
 ### LICENSE
 
 (The MIT License)
