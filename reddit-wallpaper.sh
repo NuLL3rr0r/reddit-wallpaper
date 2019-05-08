@@ -295,11 +295,11 @@ fi
 
 if [[ -z "${FIREFOX}" ]] ;
 then
-	warn "Firefox executable not found!"
-	readonly FIREFOX_VERSION_STRING="${DEFAULT_FIREFOX_VERSION_STRING}"
-	warn "Setting Firefox version string to: ${FIREFOX_VERSION_STRING}"
+    warn "Firefox executable not found!"
+    readonly FIREFOX_VERSION_STRING="${DEFAULT_FIREFOX_VERSION_STRING}"
+    warn "Setting Firefox version string to: ${FIREFOX_VERSION_STRING}"
 else
-	readonly FIREFOX_VERSION_STRING=$(${FIREFOX} -version)
+    readonly FIREFOX_VERSION_STRING=$(${FIREFOX} -version)
 fi
 
 readonly FIREFOX_VERSION_NUMBER=$(${ECHO} "${FIREFOX_VERSION_STRING}" | ${PERL} -nle "m/[-+]?([0-9]*\.[0-9]+|[0-9]+)/; ${PRINT} \$1")
