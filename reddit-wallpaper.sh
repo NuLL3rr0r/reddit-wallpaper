@@ -403,10 +403,21 @@ then
     fatal "Failed to set the background color to '${BACKGROUND_COLOR}'!"
 fi
 
+
+
 info "Using '${WALLPAPER_URL}' as the desktop wallpaper..."
 
-${FEH} ${FEH_ARGS} "${LOCAL_WALLPAPER_PATH}" > /dev/null 2>&1 &
-RC=$?
+info "Checking if user is using GNOME"
+
+if echo $XDG_CURRENT_DESKTOP | grep ":GNOME" -q > /dev/null
+then
+    info "User is using GNOME, setting wallpaper with gnome commands (disregarding feh args)"
+    gsettings set org.gnome.desktop.background picture-uri "${LOCAL_WALLPAPER_PATH}"
+    RC=$?
+else 
+    ${FEH} ${FEH_ARGS} "${LOCAL_WALLPAPER_PATH}" > /dev/null 2>&1 &
+    RC=$?
+fi
 
 if [[ $RC -ne 0 ]] ;
 then
