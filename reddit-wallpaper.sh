@@ -147,7 +147,7 @@ function info()
 {
     local line=$( "${ECHO}" $( "${CALLER}" 0 ) | "${CUT}" -d " " -f1 )
 
-    log "${LOG_INFO}" "${line}" "$FMT_INFO" "$@"
+    log "${LOG_INFO}" "${line}" "${FMT_INFO}" "$@"
 }
 
 function warn()
