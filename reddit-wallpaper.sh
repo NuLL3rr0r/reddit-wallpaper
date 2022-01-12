@@ -140,7 +140,7 @@ function log()
     else
         ${ECHO_FMT} "${FMT_WARN}[${LOG_WARN}] ${line} A null log detected!${FMT_OFF}"
         ${LOGGER} -t "${SYSLOG_TAG}" "${LOG_WARN} ${line} A null log detected!"
-    fi 
+    fi
 }
 
 function info()
